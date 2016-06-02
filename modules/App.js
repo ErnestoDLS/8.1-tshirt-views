@@ -1,5 +1,6 @@
 import React from 'react'
 import Bootstrap from 'bootstrap-sass'
+import ReactDOM from 'reac-dom'
 
 export default React.createClass({
   getDefaultProps(){
@@ -32,52 +33,63 @@ export default React.createClass({
       ]
     }
   },
+  getInitialState(){
+    return {
+      1: false,
+      2: false,
+      3: false
+    }
+  },
+  onHandleHeart(e){
+    var changeState = {};
+    changeState[ReactDOM.findDOMNode(e.target).dataset.id] = !this.state[ReactDOM.findDOMNode.(e.target).dataset.id]
+    this.setState(changeState);
+  },
   render() {
     return (
-      <main className="blocks">
+      <main className="views-block">
         <h1 className="heading">T-shirt Views</h1>
         <div className="row">
           {this.props.shirts.map(function(resp, i){
             return <div key={i} className="col-md-4"></div>
-            <div className="one">
-              <div id="imageswap" className="carousel" data-ride="carousel" data-interval="false">
-                <div className="inner">
-                  <div className="item current">
-                    <img class="shirt" src={resp.imageUrlFront}/>
+            <div className="view_wrapper">
+              <div id={resp.id} className="carousel" data-ride="carousel" data-interval="false">
+                <div className="carousel-inner">
+                  <div className="item active">
+                    <img class="shirt__image" src={resp.imageUrlFront}/>
                   </div>
                   <div className="item">
                     <img className="shirt" src={resp.imageUrlBack}/>
                   </div>
                 </div>
-                <a className="carousel-swap" href="#imageswap" role="button" data-slide="prev">
+                <a className="carousel-swap" href={`#${resp.id}`} role="button" data-slide="prev">
                   <span className="flip glyphicon-share"></span>
                 </a>
               </div>
-              <nav className="navbar">
-                <div className="buttons">
+              <div className="btn-group bar">
                   <div>
-                    <button className="navbutton-default"><span className="glyphicon glyphicon-retweet icon carousel-swap" href="#imageswap" data-slide="previous"></span></button>
-                    <button className="button-default"><span className="glyphicon glyphicon-heart-empty icon"></span></button>
+                    <button className="btn btn-default bar__el"><span className="glyphicon glyphicon-retweet icon carousel-swap" href={`#${resp.id}`} data-slide="previous"></span></button>
+                    <button className="btn btn-default bar__el" onClick={this.onHandleHeart}><span data-id={resp.id} className="glyphicon glyphicon-heart-empty icon"></span></button>
                     <div className="dropup-button">
-                      <button className="navbutton-default" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="glyphicon icon">XL</span></button>
-                      <ul className="drop-menu">
-                        <li>XS</li>
-                        <li>S</li>
-                        <li>M</li>
-                        <li>L</li>
-                      </ul>
-                      <div>
-                        <button type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div className="square"></div>
-                        </button>
-                        <ul>
-                          <li className="square__border"><div className="color__square"></div></li>
-                          <li className="square__border"><div className="color__square"></div></li>
-                          <li className="square__border"><div className="color__square"></div></li>
-                          <li className="square__border"><div className="color__square"></div></li>
-                        </ul>
-                      </div>
-                      <button><span className="glyphicon glyphicon-shopping-cart icon"></span></button>
+                    <button className="btn btn-default bar__el" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="glyphicon icon">XL</span></button>
+                    <ul className="drop-menu">
+                      <li>XS</li>
+                      <li>S</li>
+                      <li>M</li>
+                      <li>L</li>
+                    </ul>
+                    <div className="dropup dropup__button">
+                    <button type="btn btn-default bar__el dropdown-toogle square__wrapper"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div className="color__square"></div>
+                    </button>
+                    <ul>
+                      <li className="square__wrapper"><div className="color__square"></div></li>
+                      <li className="square__wrapper"><div className="color__square"></div></li>
+                      <li className="square__wrapper"><div className="color__square"></div></li>
+                      <li className="square__wrapper"><div className="color__square"></div></li>
+                    </ul>
+                    </div>
+                    <button className="btn btn-default bar__el"><span className="glyphicon glyphicon-shopping-cart icon"></span></button>
                     </div>
                   </div>
                 </div>
@@ -86,7 +98,7 @@ export default React.createClass({
               <h5>{resp.price}</h5>
             </div>
             </div>
-          })}
+          },this)}
         </div>
       </main>
     )
