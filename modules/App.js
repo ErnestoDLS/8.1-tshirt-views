@@ -33,5 +33,26 @@ export default React.createClass({
       ]
     }
   },
+  render()
+    return(
+      <section>
+        <h1 className="title">T-shirts</h1>
+          <div>
+            <div className="dropdown"></div>
+              <button className="dropdown--toggle">
+              </button>
+              <ul className="actions" aria-labelledby="dropdownMenu1">
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+              </ul>
+            </div>
+          </div>
+      </section>
+    )
+
+  }
 
 })
