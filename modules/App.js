@@ -71,7 +71,7 @@ export default React.createClass({
                   <div className="btn-group bar">
                   <div>
                   <button className="btn btn-default "><span className="glyphicon glyphicon-retweet icon carousel-swap" href={`#${resp.id}`} data-slide="prev"></span></button>
-                  <button className="btn btn-default " onClick={this.onHandleHeart}><span data-id={resp.id} className={`icon glyphicon ${this.state[resp.id]? "glyphicon-heart" : "glyphicon-heart-empty"}`}></span></button>
+                  <button className="btn btn-default bar" onClick={this.onHandleHeart}><span data-id={resp.id} className={`icon glyphicon ${this.state[resp.id]? "glyphicon-heart" : "glyphicon-heart-empty"}`}></span></button>
                   <div className="dropup dropup__button">
                   <button className="btn btn-default " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="glyphicon icon">XL</span></button>
                   <ul className="dropdown-menu">
@@ -81,7 +81,7 @@ export default React.createClass({
                     <li className="shirt__size">L</li>
                   </ul>
                   </div>
-                  <div className="dropup dropup__button test">
+                  <div className="dropup dropup__button">
                   <button className="btn btn-default  dropdown-toggle square__wrapper" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div className="square__color"></div></button>
                   <ul className="dropdown-menu dropup__wrapper">
                     <li className="square__wrapper"><div className="square__color square__color--1"></div></li>
