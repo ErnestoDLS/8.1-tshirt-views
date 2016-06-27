@@ -5875,4 +5875,55 @@ button.close {
 html {
   font-size: 62.5%; }
 
+.square__color {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  background-color: #2980ba; }
+
+.square__wrapper {
+  padding: 0.8rem;
+  display: inline-block;
+  padding-top: 0.9rem; }
+
+.shirt__size {
+  color: black;
+  display: block;
+  font-size: 2rem;
+  text-align: center; }
+
+.square__color--1 {
+  background-color: #3bbd9c; }
+
+.square__color--2 {
+  background-color: #9659b6; }
+
+.square__color--3 {
+  background-color: #2ec872; }
+
+.price {
+  color: #2980ba;
+  display: inline-block;
+  width: 42%;
+  text-align: right; }
+
+.title {
+  color: #2980ba;
+  display: inline-block;
+  margin-left: 1rem;
+  width: 50%; }
+
+.dropup__wrapper {
+  padding: 0.5rem; }
+
+.block {
+  width: 75%;
+  margin: 0 auto; }
+
+.wrapper {
+  border: 2px solid; }
+
+.shirt__image {
+  width: 100%; }
+
 /*# sourceMappingURL=main.css.map */

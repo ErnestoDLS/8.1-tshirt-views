@@ -67,7 +67,7 @@ export default React.createClass({
                       <span className="flip glyphicon glyphicon-share"></span>
                     </a>
                   </div>
-                  
+
                   <div className="btn-group bar">
                   <div>
                   <button className="btn btn-default "><span className="glyphicon glyphicon-retweet icon carousel-swap" href={`#${resp.id}`} data-slide="prev"></span></button>
@@ -94,8 +94,8 @@ export default React.createClass({
                 </div>
               </div>
 
-              <h4 className="item__title">{resp.title}</h4>
-              <h4 className="item__price">${resp.price}</h4>
+              <h4 className="title">{resp.title}</h4>
+              <h4 className="price">${resp.price}</h4>
 
             </div>
           </div>
